@@ -96,7 +96,7 @@ if cat "$m3u8_ts_list_file" | while read ts_url; do
   printf "download_if_needed %q %q_%03d_of_%03d.ts -s\n" "$ts_url" "$file" $((++i)) $ts_count;
 done | xargs -d '\n' -L 1 -I {} -P "$procs" bash -c 'err shell_exec {}; {}'; then
   err "download successfully, start merging ts" 
-  cat "$file"_[0-9]*of[0-9]*.ts > "${file}_merged.ts"
+  cat "$file"_[0-9]*_of_[0-9]*.ts > "${file}_merged.ts"
   err "successfully merge to ts '${file}_merged.ts', all done" 
 else
   err_quit "failed to download ts, please try again"
