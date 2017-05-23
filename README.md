@@ -1,5 +1,5 @@
 # download_m3u8_to_ts
-a bash script that can download m3u8 to ts with multiple process &amp; cache
+a bash script that can download m3u8 to ts with multiple processes in parallel and resume from last state
 
 usage:
 
